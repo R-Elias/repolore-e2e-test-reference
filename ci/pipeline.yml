@@ -1,0 +1,2 @@
+# Fictional pipeline definition; not a GitHub workflow.
+stages: [build, test, deploy]

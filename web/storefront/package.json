@@ -1,0 +1,5 @@
+{
+  "name": "@harbor/storefront",
+  "private": true,
+  "scripts": { "build": "vite build" }
+}

@@ -1,0 +1,2 @@
+# Fixture rule: no line-ending conversion on any platform.
+* -text
