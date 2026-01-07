@@ -5,3 +5,4 @@ node_modules/
 *.user
 .terraform/
 .DS_Store
+!tools/bin/
