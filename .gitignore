@@ -6,3 +6,7 @@ node_modules/
 .terraform/
 .DS_Store
 !tools/bin/
+
+# RepoLore local-only state
+_repolore/sessions/
+_repolore/.history/
