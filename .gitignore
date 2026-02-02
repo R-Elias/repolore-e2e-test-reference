@@ -10,4 +10,3 @@ node_modules/
 # RepoLore local-only state
 _repolore/sessions/
 _repolore/.history/
-_repolore/tree/
