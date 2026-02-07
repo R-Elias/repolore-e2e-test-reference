@@ -4,3 +4,5 @@
 - The card provider is wrapped in `src/Payments.Api/Providers/CardProvider.cs`.
 - Retries (3 attempts, exponential backoff with jitter) reuse the same idempotency key, so a retried
   charge is never billed twice. Verified in `RetryPolicy.cs` and `CardProvider.cs`.
+
+- Hotfix 1.0.1: provider timeouts count as failed attempts.
