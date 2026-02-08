@@ -6,4 +6,3 @@
 - SLA: an order is confirmed within 2 seconds at p99 and 5 seconds at p95 (January load test).
 
 - Hotfix 1.0.1: expired reservations are released before payment retries.
-tampered
