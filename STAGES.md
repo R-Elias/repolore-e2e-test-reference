@@ -22,7 +22,7 @@
 ## Shape of the history
 
 `s01`–`s10` are one adopter's journey. `s10` is the clean **baseline**. Each hazard stage
-(`s11`–`s23`, `s28`, `s36`–`s39`) is the baseline plus one category of hazard, so hazards never
+(`s11`–`s23`, `s28`, `s36`–`s41`) is the baseline plus one category of hazard, so hazards never
 accumulate: moving from one hazard stage to the next first undoes the previous one. The alpha
 stages (`s24`–`s27`) start from `s03`, the repository before adoption. `s29` lives on a short
 branch that `s31` merges. `s33`–`s35` start from `s32`.
@@ -49,10 +49,10 @@ clone, because checking them out over an existing local `.history/` replaces it.
 | `s13-note-content-hazards` | Invalid UTF-8, a UTF-8 BOM, CRLF line endings, a path note whose name does not match its directory, a 1.5 MB note | `invalid-utf8`, `invalid-note-name` |
 | `s14-huge-tree` | 1000 generated source directories, 500 of them with notes | Healthy, large |
 | `s15-unicode-paths` | Accented, Japanese, emoji and mixed-script directory names with notes | Healthy |
-| `s16-policy-variants` | `history.exclude` for generated notes; `_repoloreignore` with an excluded directory and a re-inclusion | Healthy; `--explain` differs by path |
+| `s16-policy-variants` | `history.exclude` for generated notes; the ignore rules under the preview's file name `_repoloreignore` | Since the file became `.repoloreignore` (2026-10-24): `policy-error` asking to rename it, and its rules are not read. `s40` has the same rules under the new name |
 | `s17-tiny-history-budget` | `history.maxBytes` of 10000: one checkpoint fits, two do not | A checkpoint taken after one from another stage evicts the older |
 | `s18-history-disabled` | `history.enabled` false | Writes needing history refuse (`history-disabled`) |
-| `s19-invalid-ignore-rule` | `_repoloreignore` with an unsupported character class | `policy-error` |
+| `s19-invalid-ignore-rule` | `_repoloreignore` (preview name) with an unsupported character class | Since the rename: the rename `policy-error`; the rule is not read. `s41` has the invalid rule under the new name |
 | `s20-invalid-history-policy` | Negative `history.maxBytes` | `policy-error` |
 | `s21-unsupported-format` | `formatVersion` 2 | `unsupported-format` |
 | `s22-malformed-marker` | Truncated `repolore.json` | `malformed-format` |
@@ -73,6 +73,8 @@ clone, because checking them out over an existing local `.history/` replaces it.
 | `s37-case-collision` | `services/Billing/` and `services/billing/`, each with a note. Built through the index | Linux only: both exist. Windows and macOS clones collide |
 | `s38-symlinks` | A knowledge note that is a symlink, a dangling symlink escaping the repository, a symlinked source directory | Linux and macOS; Windows checks links out as text unless enabled |
 | `s39-long-paths` | Source and note paths longer than 260 characters | Windows needs `core.longpaths=true` for the clone |
+| `s40-policy-variants-renamed` | `s16` with the ignore file under its final name `.repoloreignore` | Healthy; `--explain` follows the exclusion and the re-inclusion |
+| `s41-invalid-ignore-rule-renamed` | `s19` with the invalid rule in `.repoloreignore` | `policy-error` with the line number; reads and writes still work |
 
 The last column states the intent. The expected outputs themselves are pinned by the scenarios in
 the RepoLore repository, not here.

@@ -1,0 +1,4 @@
+# Vendored and generated code carries no knowledge of its own.
+vendor/
+generated/*
+!generated/keep/
