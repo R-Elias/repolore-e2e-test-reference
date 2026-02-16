@@ -1,7 +1,7 @@
 # Stages of the RepoLore reference repository
 
 > **Test fixture.** This repository is the fixed input of the RepoLore scenario tests
-> (`tests/RepoLore.Scenarios.Tests` in the RepoLore repository). "Harbor" is fictional: the code
+> (`tests/RepoLore.Cli.Tests/Scenarios/` in the RepoLore repository). "Harbor" is fictional: the code
 > does not build or run and is not meant to. Only the files and their Git history matter.
 
 ## Rules
@@ -75,6 +75,7 @@ clone, because checking them out over an existing local `.history/` replaces it.
 | `s39-long-paths` | Source and note paths longer than 260 characters | Windows needs `core.longpaths=true` for the clone |
 | `s40-policy-variants-renamed` | `s16` with the ignore file under its final name `.repoloreignore` | Healthy; `--explain` follows the exclusion and the re-inclusion |
 | `s41-invalid-ignore-rule-renamed` | `s19` with the invalid rule in `.repoloreignore` | `policy-error` with the line number; reads and writes still work |
+| `s42-method-guides-context` | `s10` with the method that `init` writes since 1.0.0-rc.2: root-relative targets, `--node` for custom areas, the context budget | Healthy; `init` on `s03` writes this `method.md` |
 
 The last column states the intent. The expected outputs themselves are pinned by the scenarios in
 the RepoLore repository, not here.
