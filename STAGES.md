@@ -76,6 +76,7 @@ clone, because checking them out over an existing local `.history/` replaces it.
 | `s40-policy-variants-renamed` | `s16` with the ignore file under its final name `.repoloreignore` | Healthy; `--explain` follows the exclusion and the re-inclusion |
 | `s41-invalid-ignore-rule-renamed` | `s19` with the invalid rule in `.repoloreignore` | `policy-error` with the line number; reads and writes still work |
 | `s42-method-guides-context` | `s10` with the method that `init` writes since 1.0.0-rc.2: root-relative targets, `--node` for custom areas, the context budget | Healthy; `init` on `s03` writes this `method.md` |
+| `s43-non-knowledge-files` | `s10` plus a `.txt` and an `.svg` beside notes, and a folder holding only `.gitkeep` | Healthy; `tree` lists none of them, nor the folder without a note |
 
 The last column states the intent. The expected outputs themselves are pinned by the scenarios in
 the RepoLore repository, not here.
