@@ -78,6 +78,7 @@ clone, because checking them out over an existing local `.history/` replaces it.
 | `s42-method-guides-context` | `s10` with the method that `init` writes since 1.0.0-rc.2: root-relative targets, `--node` for custom areas, the context budget | Healthy; `init` on `s03` writes this `method.md` |
 | `s43-non-knowledge-files` | `s10` plus a `.txt` and an `.svg` beside notes, and a folder holding only `.gitkeep` | Healthy; `tree` lists none of them, nor the folder without a note |
 | `s44-unknown-config-keys` | `s10` with misspelled history keys and an unknown top-level key | Healthy: unknown keys are ignored (frozen for 1.0); history stays enabled with the defaults and covers `adr/` |
+| `s45-ignore-rule-trailing-space` | `s10` with a `.repoloreignore` rule ending with a space | `policy-error` with the line number; reads and writes still work |
 
 The last column states the intent. The expected outputs themselves are pinned by the scenarios in
 the RepoLore repository, not here.
